@@ -1,0 +1,15 @@
+You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.
+
+- Load Number
+- Pickup Location
+- Pickup Time
+- Drop-off Location
+- Drop-off Time
+- Total Rate
+- Rate Per Mile
+
+Text:
+{TEXT}
+
+Return only a JSON object:
+
