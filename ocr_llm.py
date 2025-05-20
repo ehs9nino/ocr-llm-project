@@ -49,8 +49,27 @@ def generate_prompt(ocr_text, doc_type="cdl"):
 
 
 
+def run_llm(full_prompt):
+    response = llm.create_completion(
+        prompt=full_prompt,
+        max_tokens=512,
+        stop=["</s>"]
+    )
+    raw_text = response["choices"][0]["text"].strip()
+
+    # Attempt to extract JSON using regex
+    match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+    if match:
+        try:
+            return json.dumps(json.loads(match.group(0)), indent=2)  # Return clean JSON string
+        except json.JSONDecodeError:
+            return '{"error": "Failed to parse JSON from model output."}'
+    else:
+        return '{"error": "No JSON block found in model response."}'
 
 
+
+"""
 def run_llm(full_prompt):
     
     response = llm.create_completion(
@@ -59,3 +78,6 @@ def run_llm(full_prompt):
         stop=["</s>"]
     )
     return response["choices"][0]["text"].strip()
+"""
+
+
