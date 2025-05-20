@@ -13,9 +13,19 @@ prompt = generate_prompt(ocr_text, doc_type="cdl")
 print("\n=== Full Prompt Sent to LLM ===\n")
 print(prompt)
 
+
+
+
+
+import time
+...
+
 # Step 3: Run LLM
+start = time.time()
 response = run_llm(prompt)
+end = time.time()
+
 print("\n=== LLM Structured Output ===\n")
 print(response)
 
-
+print(f"\n🕒 LLM Inference Time: {round(end - start, 2)} seconds")
