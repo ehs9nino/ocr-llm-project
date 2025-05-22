@@ -1,15 +1,37 @@
+# Virtual environment
 venv/
+
+# Python bytecode and cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Log, DB, cache
 *.log
 *.sqlite
 *.db
+
+# IDE & OS files
 .DS_Store
 .idea/
+.vscode/
+*.code-workspace
+
+# Output and data directories
+output/
+uploads/
+test_data/
+
+# Model weights
 *.gguf
 *.bin
 *.onnx
 weights/
-.env
-output/
 
+# Environment variables
+.env
+
+# Node or frontend temp (in case of frontend extensions)
+node_modules/
+dist/
