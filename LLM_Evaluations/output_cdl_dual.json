@@ -1,0 +1,154 @@
+[
+  {
+    "source_image": "driver1.jpg",
+    "ocr_time": 1.02,
+    "extractor_time": 14.77,
+    "vision_time": 3.19,
+    "total_llm_time": 17.96,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "NEWYORK STATEUSA\naTFAd\nCOMMERCIAL DRIVER LICENSE\n840498 835\nClass A\nABDURASHIDOV\nJAMSHIDDIN\n207220TH LN APT 1G\nBROOKLYN.NY11214\nAPK\nDOB04/12/1995\n95\n1ssued03/23/2022\nExpTres04/12/2030\nEP\nEXCELSIOR\nREN2\nAPK9S\nSex M Heght5O7Eyes BRO",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text given commercial driver license (CDL) and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Full Name \n- License Number\n- Expiration Date\n- State\n- Address\n- Date of Birth\n\nText:\nNEWYORK STATEUSA\naTFAd\nCOMMERCIAL DRIVER LICENSE\n840498 835\nClass A\nABDURASHIDOV\nJAMSHIDDIN\n207220TH LN APT 1G\nBROOKLYN.NY11214\nAPK\nDOB04/12/1995\n95\n1ssued03/23/2022\nExpTres04/12/2030\nEP\nEXCELSIOR\nREN2\nAPK9S\nSex M Heght5O7Eyes BRO\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the DRIVER LICENSE IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"full_name\": \"\",\n  \"license_number\": \"\",\n  \"expiration_date\": \"\",\n  \"state\": \"\",\n  \"address\": \"\",\n  \"date_of_birth\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the card (do not reformat dates).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"full_name\": \"Abdurashidov JAMŚḤĪDDOIN\", \"license_number\": \"840498\", \"expiration_date\"",
+    "extractor_raw": "{ \"Full Name\": \" Abdurashidov JAMŚḤĪDDOIN \", \"License Number\": \" 840498\", \"Expiration Date\": \" 04/12/2030\", \"State\": \" NEWYORK \", \"Address\": \" 207220TH LN APT 1G, BROOKLYNYNY,11214\", \"Date of Birth\": \" 04/12/1995\"}",
+    "vision_raw": "{\n  \"full_name\": \"Abdurasidov Jamshiddin\",\n  \"license_number\": \"\",\n  \"expiration_date\": \"04/12/2030\",\n  \"state\": \"NEW YORK\",\n  \"address\": \"2072 20TH LN APT 1G, BROOKLYN, NY 11214\",\n  \"date_of_birth\": \"04/12/1995\"\n}",
+    "extractor_fields": {
+      "full_name": "Abdurashidov JAMŚḤĪDDOIN",
+      "license_number": "840498",
+      "expiration_date": "04/12/2030",
+      "state": "NEWYORK",
+      "address": "207220TH LN APT 1G, BROOKLYNYNY,11214",
+      "date_of_birth": "04/12/1995"
+    },
+    "vision_fields": {
+      "full_name": "Abdurasidov Jamshiddin",
+      "license_number": "",
+      "expiration_date": "04/12/2030",
+      "state": "NEW YORK",
+      "address": "2072 20TH LN APT 1G, BROOKLYN, NY 11214",
+      "date_of_birth": "04/12/1995"
+    },
+    "chosen_fields": {
+      "full_name": "Abdurashidov JAMŚḤĪDDOIN",
+      "license_number": "840498",
+      "expiration_date": "04/12/2030",
+      "state": "NEWYORK",
+      "address": "207220TH LN APT 1G, BROOKLYNYNY,11214",
+      "date_of_birth": "04/12/1995"
+    },
+    "chosen_from": "extractor"
+  },
+  {
+    "source_image": "driver2.jpg",
+    "ocr_time": 1.25,
+    "extractor_time": 12.28,
+    "vision_time": 2.81,
+    "total_llm_time": 15.09,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "Pennsylvunia\nCOMMERCIAL\nDRIVER'SLICENSE\nvisiAcom UsY\nNOTFOR REALIDPURPOSES\n40DLN\n34491996\nDUPS.00\n3 DOB05/04/1991\n4bEXP05/05/2026\n4aiss:10/01/2022\n1JULES\nRJEANISAAC\n&914WWALNUTSTART\nALLENTOWN.PA 18102\n15SEXM18EYES:BLK\n16HGT511\n9 CLASS:A\n9aENDN\nCDL\n12RESTRNONE\n5DD2227401505402\n100000075338",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text given commercial driver license (CDL) and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Full Name \n- License Number\n- Expiration Date\n- State\n- Address\n- Date of Birth\n\nText:\nPennsylvunia\nCOMMERCIAL\nDRIVER'SLICENSE\nvisiAcom UsY\nNOTFOR REALIDPURPOSES\n40DLN\n34491996\nDUPS.00\n3 DOB05/04/1991\n4bEXP05/05/2026\n4aiss:10/01/2022\n1JULES\nRJEANISAAC\n&914WWALNUTSTART\nALLENTOWN.PA 18102\n15SEXM18EYES:BLK\n16HGT511\n9 CLASS:A\n9aENDN\nCDL\n12RESTRNONE\n5DD2227401505402\n100000075338\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the DRIVER LICENSE IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"full_name\": \"\",\n  \"license_number\": \"\",\n  \"expiration_date\": \"\",\n  \"state\": \"\",\n  \"address\": \"\",\n  \"date_of_birth\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the card (do not reformat dates).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"full_name\": \"JULES RJEANISAAC\", \"license_number\": \"DLN34491996\", \"expiration_date\": \"",
+    "extractor_raw": "{ \"Full Name\": \" JULES RJEANISAAC\", \"License Number\": \" DLN34491996\", \"Expiration Date\": \"05/05/2026\", \"State\": \"Pennsylvania\", \"Address\": \"ALLENTOON.PA 18102\", \"Date of Birth\": \"05/04/1991\" }",
+    "vision_raw": "{\n  \"full_name\": \"JULES JEAN ISAAC\",\n  \"license_number\": \"DLN3491996\",\n  \"expiration_date\": \"05/05/2026\",\n  \"state\": \"PENNSYLVANIA\",\n  \"address\": \"914 W WALNUT ST APT 2 ALLENTOWN, PA 18102\",\n  \"date_of_birth\": \"05/04/1991\"\n}",
+    "extractor_fields": {
+      "full_name": "JULES RJEANISAAC",
+      "license_number": "DLN34491996",
+      "expiration_date": "05/05/2026",
+      "state": "Pennsylvania",
+      "address": "ALLENTOON.PA 18102",
+      "date_of_birth": "05/04/1991"
+    },
+    "vision_fields": {
+      "full_name": "JULES JEAN ISAAC",
+      "license_number": "DLN3491996",
+      "expiration_date": "05/05/2026",
+      "state": "PENNSYLVANIA",
+      "address": "914 W WALNUT ST APT 2 ALLENTOWN, PA 18102",
+      "date_of_birth": "05/04/1991"
+    },
+    "chosen_fields": {
+      "full_name": "JULES JEAN ISAAC",
+      "license_number": "DLN3491996",
+      "expiration_date": "05/05/2026",
+      "state": "PENNSYLVANIA",
+      "address": "914 W WALNUT ST APT 2 ALLENTOWN, PA 18102",
+      "date_of_birth": "05/04/1991"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "driver3.jpg",
+    "ocr_time": 1.2,
+    "extractor_time": 12.09,
+    "vision_time": 2.27,
+    "total_llm_time": 14.36,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "USA\nFlorida\nCGI\n9CIASSA\n520-420-77-067-0\nZHENG\nUEEFREY\n1222ELINOREDR\nQRLANDO.FL32803-6204\n3o02/27/197715X M\n4bEXP02/2712028\n16HGT5-07\n12RESTE\n9aENDX\nHAZMATUNTI02/2728\nCDONOR\nSAFE DRIVER\n4aS 02/22/2024\n50DQ132402220027\nREPLACED 02/22/2024\nOperation of a motor venicie consntutes\nconsent to any sobriety test required by iaw",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text given commercial driver license (CDL) and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Full Name \n- License Number\n- Expiration Date\n- State\n- Address\n- Date of Birth\n\nText:\nUSA\nFlorida\nCGI\n9CIASSA\n520-420-77-067-0\nZHENG\nUEEFREY\n1222ELINOREDR\nQRLANDO.FL32803-6204\n3o02/27/197715X M\n4bEXP02/2712028\n16HGT5-07\n12RESTE\n9aENDX\nHAZMATUNTI02/2728\nCDONOR\nSAFE DRIVER\n4aS 02/22/2024\n50DQ132402220027\nREPLACED 02/22/2024\nOperation of a motor venicie consntutes\nconsent to any sobriety test required by iaw\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the DRIVER LICENSE IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"full_name\": \"\",\n  \"license_number\": \"\",\n  \"expiration_date\": \"\",\n  \"state\": \"\",\n  \"address\": \"\",\n  \"date_of_birth\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the card (do not reformat dates).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"full_name\": \"UEEFREY ZHENG\", \"license_number\": \"9CIASSA\", \"expiration_date\": \"02/27/2",
+    "extractor_raw": "{ \"Full Name\": \"UEEFREY ZHENG\", \"License Number\": \"9CIASSA\", \"Expiration Date\": \"02/27/2028\", \"State\": \"Florida\", \"Address\": \"1222ELINOREDR QRLANDO.FL32803-6204\", \"Date of Birth\": \"03-02-1977\" }",
+    "vision_raw": "```json\n{\n  \"full_name\": \"JEFFERY ZHENG\",\n  \"license_number\": \"520-77-067-0\",\n  \"expiration_date\": \"02/27/2028\",\n  \"state\": \"Florida\",\n  \"address\": \"1222 ELINORE DR,ORLANDO,FL 32803-6204\",\n  \"date_of_birth\": \"02/27/1977\"\n}\n```",
+    "extractor_fields": {
+      "full_name": "UEEFREY ZHENG",
+      "license_number": "9CIASSA",
+      "expiration_date": "02/27/2028",
+      "state": "Florida",
+      "address": "1222ELINOREDR QRLANDO.FL32803-6204",
+      "date_of_birth": "03-02-1977"
+    },
+    "vision_fields": {
+      "full_name": "JEFFERY ZHENG",
+      "license_number": "520-77-067-0",
+      "expiration_date": "02/27/2028",
+      "state": "Florida",
+      "address": "1222 ELINORE DR,ORLANDO,FL 32803-6204",
+      "date_of_birth": "02/27/1977"
+    },
+    "chosen_fields": {
+      "full_name": "JEFFERY ZHENG",
+      "license_number": "520-77-067-0",
+      "expiration_date": "02/27/2028",
+      "state": "Florida",
+      "address": "1222 ELINORE DR,ORLANDO,FL 32803-6204",
+      "date_of_birth": "02/27/1977"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "driver4.jpg",
+    "ocr_time": 0.93,
+    "extractor_time": 11.92,
+    "vision_time": 2.42,
+    "total_llm_time": 14.34,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "Texass\nDRIVER LICENSE\nCOMMERCIAL\nDirector:\nDRIVER LICENSE\n4a.DL37563254\n9.ClassA\n4b.EXp09/14/2030\n3.DOB09/1471986\n4a.Iss03/24/2022\n1HYMES\n2.DAVIDLAROY\n8.7801 MEADOWBROOK DR\nFORTWORTH TX76112\n12.RestAE\n9a.EndNONE\n16.Hgt603\n15.SexM\n18EyesBRO\n5.DD45629280031214336722",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text given commercial driver license (CDL) and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Full Name \n- License Number\n- Expiration Date\n- State\n- Address\n- Date of Birth\n\nText:\nTexass\nDRIVER LICENSE\nCOMMERCIAL\nDirector:\nDRIVER LICENSE\n4a.DL37563254\n9.ClassA\n4b.EXp09/14/2030\n3.DOB09/1471986\n4a.Iss03/24/2022\n1HYMES\n2.DAVIDLAROY\n8.7801 MEADOWBROOK DR\nFORTWORTH TX76112\n12.RestAE\n9a.EndNONE\n16.Hgt603\n15.SexM\n18EyesBRO\n5.DD45629280031214336722\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the DRIVER LICENSE IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"full_name\": \"\",\n  \"license_number\": \"\",\n  \"expiration_date\": \"\",\n  \"state\": \"\",\n  \"address\": \"\",\n  \"date_of_birth\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the card (do not reformat dates).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"full_name\": \"DAVID LAROY\", \"license_number\": \"4a.DL37563254\", \"expiration_date\": \"09/",
+    "extractor_raw": "{ \"Full Name\": \"DAVID LAROY\", \"License Number\": \"4a.DL37563254\", \"Expiration Date\": \"09/ hecho/2030\", \"State\": \"Texas\", \"Address\": \"8.7801 MEadow brook DR, FORTWORTH TX76112\", \"Date of Birth\": \"09/14/1986\" }",
+    "vision_raw": "{\n  \"full_name\": \"HYMES DAVID LAROY\",\n  \"license_number\": \"37563254\",\n  \"expiration_date\": \"09/14/2030\",\n  \"state\": \"Texas\",\n  \"address\": \"7801 MEADOWBROOK DR, FORT WORTH, TX 76112\",\n  \"date_of_birth\": \"09/14/1986\"\n}",
+    "extractor_fields": {
+      "full_name": "DAVID LAROY",
+      "license_number": "4a.DL37563254",
+      "expiration_date": "09/ hecho/2030",
+      "state": "Texas",
+      "address": "8.7801 MEadow brook DR, FORTWORTH TX76112",
+      "date_of_birth": "09/14/1986"
+    },
+    "vision_fields": {
+      "full_name": "HYMES DAVID LAROY",
+      "license_number": "37563254",
+      "expiration_date": "09/14/2030",
+      "state": "Texas",
+      "address": "7801 MEADOWBROOK DR, FORT WORTH, TX 76112",
+      "date_of_birth": "09/14/1986"
+    },
+    "chosen_fields": {
+      "full_name": "HYMES DAVID LAROY",
+      "license_number": "37563254",
+      "expiration_date": "09/14/2030",
+      "state": "Texas",
+      "address": "7801 MEADOWBROOK DR, FORT WORTH, TX 76112",
+      "date_of_birth": "09/14/1986"
+    },
+    "chosen_from": "vision"
+  }
+]

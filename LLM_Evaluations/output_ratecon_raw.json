@@ -1,0 +1,317 @@
+[
+  {
+    "source_image": "a1.jpg",
+    "ocr_time": 0.81,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 20.65,
+    "llm_output_raw": "{\"load number\": \"116WQ2Q4S\", \"pickup location\": \"IND2PLainfield,IN 46168\", \"pickup time\": \"Sun,Aug 18,11:30 EDT\", \"drop-off location\": \"MDW5 CREST Hill,ILLINOIS 60403\", \"drop-fftime\": \"Sun Aug 18,15:56 CDT\", \"total rate\": \"$1022,07\", \" rate per mile\": \"$5.29/mi\"}"
+  },
+  {
+    "source_image": "a1.jpg",
+    "ocr_time": 0.81,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.23,
+    "llm_output_raw": "{ \"Load Number\": \"116WQ2Q4S\", \"Pickup Location\": \"IND2PLAINFIELD,IN 46168\", \"Pickup Time\": \"14h 58m\", \"Drop-off Location\": \"MDW5 CREST HILL,ILLINOIS 60403\", \"Drop-off Time\": \"Sat, 17 Aug 11:30 Eastern ..\", \"Total Rate\": \"1022\", \"Rate Per Mile\": \"7\" }"
+  },
+  {
+    "source_image": "a1.jpg",
+    "ocr_time": 0.81,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 16.29,
+    "llm_output_raw": "{   \"Load Number\": \"116WQ2Q4S\",   \"Pickup Location\": \"14h 58m IND2PLAINFIELD,IN 46168\",   \"Pickup Time\": \"Sun,Aug 18,11:30 EDT\",   \"Drop-off Location\": \"MDW5 CREST HILL,ILLINOIS 60403\",   \"Drop-off Time\": \"SunAug 18,15:56 CDT\",   \"Total Rate\": \"$1022,07\",   \"Rate Per Mile\": \"$5.29/mi\" }"
+  },
+  {
+    "source_image": "a2.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 20.7,
+    "llm_output_raw": "{ \"Load Number\": \"T-112K9S5H5\", \"Pickup Location\": \"RDG1 HAMBURG, Pennsylvania 19526\", \"Pickup Time\": \"Sun, Aug 18, 01:30 EDT\", \"Drop-off Location\": \"DET3 PONTIĄ Fuß miejsc frü Dopo ancora È luego DopoÚ FußĎ Titel Haupt Fuß anderen Ort fün neue Adresse Foot street foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot foot street foot foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot\", \"Drop-off Time\": \"Mon, Aug 19, 03:04 EDT\", \"Total Rate\": \"$ 847.46\", \"Rate Per M mile\": \"$ 1.51/mi\" }"
+  },
+  {
+    "source_image": "a2.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.58,
+    "llm_output_raw": "{   \"Load Number\": \"T-112K9S5H5\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"9h 11m\",   \"Drop-off Location\": \"RDG1 HAMBURG,Pennsylvania 19526\",   \"Drop-off Time\": \"Sun,Aug 18,01:30 EDT\",   \"Total Rate\": \"1d 2h\",   \"Rate Per Mile\": \"53'TrailerP\" }"
+  },
+  {
+    "source_image": "a2.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.18,
+    "llm_output_raw": "{   \"Load Number\": \"T-112K9S5H5\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"Sun,Aug 18,01:30 EDT\",   \"Drop-off Location\": \"PONTIAC,Michigan 48342\",   \"Drop-off Time\": \"Mon,Aug 19,03:04 EDT\",   \"Total Rate\": \"$847,46\",   \"Rate Per Mile\": \"$1.51/mi\" }"
+  },
+  {
+    "source_image": "a3.jpg",
+    "ocr_time": 0.82,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 14.52,
+    "llm_output_raw": "{'Load Number': 'T-113MK9MSS', 'Pickup Location': 'Spot', 'Pickup Time': '10h 33m', 'Drop-off Location': 'LDJ5 STATEN ISLAND,NY 10314', 'Drop-off Time': 'Sun,Aug 18,16:15 EDT', 'Total Rate': '$1459.89', 'Rate Per Mile': '$2.17/mi'}"
+  },
+  {
+    "source_image": "a3.jpg",
+    "ocr_time": 0.82,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 5.12,
+    "llm_output_raw": "{\"Load Number\": \"T-113MK9MSS\", \"Pickup Location\": \"DET3PONTIAC,Michigan 48342\", \"Pickup Time\": \"10h 33m\", \"Drop-off Location\": \"T-53'TrailerP\", \"Drop-off Time\": \"15h 38m\", \"Total Rate\": \"672mi\", \"Rate Per Mile\": \"2.17/mi\"}"
+  },
+  {
+    "source_image": "a3.jpg",
+    "ocr_time": 0.82,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 16.43,
+    "llm_output_raw": "{   \"Load Number\": \"T-113MK9MSS\",   \"Pickup Location\": \"Detroit, Michigan 48342\",   \"Pickup Time\": \"Sun,Aug 18,01:08 EDT\",   \"Drop-off Location\": \"Staten Island, NY 10314\",   \"Drop-off Time\": \"Sun,Aug 18,16:15 EDT\",   \"Total Rate\": \"$1459,89\",   \"Rate Per Mile\": \"$2.17/mi\" }"
+  },
+  {
+    "source_image": "a4.jpg",
+    "ocr_time": 0.58,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 14.83,
+    "llm_output_raw": "{  \"Load Number\": \"T-114RDNVV2\",  \"Pick up Location\": \"Spot\",  \"Pick up Time\": \"9h 22m\",  \"Drop off Location\": \"ABQ2 Los Lunas,NM 87031\",  \"Drop off time\": \"Sat, Aug 17,19:28 MDT\",  \"Total rate\": \"$965,968\",  \"Rate per mile\": \"$2.41/mi\" }"
+  },
+  {
+    "source_image": "a4.jpg",
+    "ocr_time": 0.58,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.44,
+    "llm_output_raw": "{   \\\"Load Number\\\": \\\"T-114RDNVV2\\\",   \\\"Pickup Location\\\": \\\"ABQ2 Los Lunas,NM 87031\\\",   \\\"Pickup Time\\\": \\\"9h 22m\\\",   \\\"Drop-off Location\\\": \\\"COS5 COLORADO SPRINGS,Colorado..\\\",   \\\"Drop-off Time\\\": \\\"Sat,Aug 18,04:39 MDT\\\",   \\\"Total Rate\\\": \\\"$965,968\\\",   \\\"Rate Per Mile\\\": \\\"$2.41/mi\\\" }"
+  },
+  {
+    "source_image": "a4.jpg",
+    "ocr_time": 0.58,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 16.96,
+    "llm_output_raw": "{   \"Load Number\": \"T-114RDNVV2\",   \"Pickup Location\": \"Los Lunas,NM 87031\",   \"Pickup Time\": \"19:28 MDT\",   \"Drop-off Location\": \"COLORADO SPRINGS,Colorado..\",   \"Drop-off Time\": \"04:39 MDT\",   \"Total Rate\": \"$965,968\",   \"Rate Per Mile\": \"$2.41/mi\" }"
+  },
+  {
+    "source_image": "a5.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 26.98,
+    "llm_output_raw": "{\"load_number\": \"T-113JFVVRZ\", \"pickup_location\": \"Spot\", \"pickup_time\": \"11h 57m\", \"drop_off_location\": \"DCL2 AKron,Ohio 44305\", \"drop_off_ time\": \"Sun,Aug 18,2 miejscespec bekan״ développer du logiciel Python - je prend en créant des solutions optimales pour les problèmes complexes.  Voici le JSON que je dé finissant en créant à la main:  ``` {     \"load_number\": \"T-113JFVVRZ\",     \"pickup_location\": \"Spot\",     \" pickup_time\": \"11h 57 m\",     \" drop_off location\": \"DCL2 Akron,Ohio 44305\",     \" drop off time\": \" Sun, Aug 18,8h 21 EDT \",     \" total rate\": \"$ 902,03\",     \" rate per mile\": \"$ 1.92/ mi \" }"
+  },
+  {
+    "source_image": "a5.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.07,
+    "llm_output_raw": "{\"Load Number\": \"T-113JFVVRZ\", \"Pickup Location\": \"Spot\", \"Pickup Time\": \"11h 57m\", \"Drop-off Location\": \"EWR8TETERBORO,NJ 07608\", \"Drop-off Time\": \"Sun,Aug 18,08:21 EDT\", \"Total Rate\": \"$902,03\", \"Rate Per Mile\": \"$1.92/mi\"}"
+  },
+  {
+    "source_image": "a5.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 18.52,
+    "llm_output_raw": "{   \"Load Number\": \"T-113JFVVRZ\",   \"Pickup Location\": \"EWR8TETERBORO,NJ 07608\",   \"Pickup Time\": \"Sat,Aug 17,21:51 EDT\",   \"Drop-off Location\": \"DCL2 AKRON,Ohio 44305\",   \"Drop-off Time\": \"Sun,Aug 18,08:21 EDT\",   \"Total Rate\": \"$902,03\",   \"Rate Per Mile\": \"$1.92/mi\" }"
+  },
+  {
+    "source_image": "a6.jpg",
+    "ocr_time": 0.68,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 16.73,
+    "llm_output_raw": "{\"load number\": \"111Y66J3D\", \"pickup location\": \"Spot, PHX5GOODyear, AZ 85338\", \"pickup time\": \"Sat, Aug 17, 19:45 MST\", \"drop-off location\": \"T,  53'Trailer P, TCY9 Oakley, California 94561\", \"drop-off time\": \"Sun, Aug 18, 10:43 PDT\", \"Total rate\": \"$1215.26\", \"rate per mile\": \"$1.67/mi\"}"
+  },
+  {
+    "source_image": "a6.jpg",
+    "ocr_time": 0.68,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.29,
+    "llm_output_raw": "{   \"Load Number\": \"111Y66J3D\",   \"Pickup Location\": \"PHX5GOODYEAR,AZ 85338\",   \"Pickup Time\": \"13h 46m\",   \"Drop-off Location\": \"T\",   \"Drop-off Time\": \"15h 29m\",   \"Total Rate\": \"$1215,26\",   \"Rate Per Mile\": \"$1.67/mi\" }"
+  },
+  {
+    "source_image": "a6.jpg",
+    "ocr_time": 0.68,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.07,
+    "llm_output_raw": "{   \"Load Number\": \"111Y66J3D\",   \"Pickup Location\": \"PHX5GOODYEAR,AZ 85338\",   \"Pickup Time\": \"19:45 MST\",   \"Drop-off Location\": \"TCY9 OAKLEY,California 94561\",   \"Drop-off Time\": \"10:43 PDT\",   \"Total Rate\": \"$1215,26\",   \"Rate Per Mile\": \"$1.67/mi\" }"
+  },
+  {
+    "source_image": "a7.jpg",
+    "ocr_time": 0.87,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 15.41,
+    "llm_output_raw": "{'load number': '112YL5VHQ', 'pick up location': 'AMA1Amarilllo,TX79108', 'pick up time': '20h 1m', 'drop off location': 'ABQ5 Albuquerque,New Mexico 87121', 'drop off time': 'Sun, Aug 18, 07:32 MDT', 'total rate': '$1163.93', 'rate per mile': '$3.82/mi'}"
+  },
+  {
+    "source_image": "a7.jpg",
+    "ocr_time": 0.87,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 6.56,
+    "llm_output_raw": "{   \\\"Load Number\\\": \\\"112YL5VHQ\\\",   \\\"Pickup Location\\\": \\\"20h 1m\\\",   \\\"Pickup Time\\\": \\\"7h 3m\\\",   \\\"Drop-off Location\\\": \\\"ABQ5 ALBUQUERQUE,New Mexico 87121\\\",   \\\"Drop-off Time\\\": \\\"Sat,17 Aug 02:00 Central D..\\\",   \\\"Total Rate\\\": \\\"$1163,93\\\",   \\\"Rate Per Mile\\\": \\\"$3.82/mi\\\" }\" ``` {   \"Load Number\": \"112YL5VHQ\",   \"Pickup Location\": \"20h 1m\",   \"Pickup Time\": \"7h 3m\",   \"Drop-off Location\": \"ABQ5 ALBUQUERQUE,New Mexico 87121\",   \"Drop-off Time\": \"Sat,17 Aug 02:00 Central D..\",   \"Total Rate\": \"$1163,93\",   \"Rate Per Mile\": \"$3.82/mi\" }"
+  },
+  {
+    "source_image": "a7.jpg",
+    "ocr_time": 0.87,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.26,
+    "llm_output_raw": "{   \"Load Number\": \"112YL5VHQ\",   \"Pickup Location\": \"Amarillo,TX79108\",   \"Pickup Time\": \"20h 1m\",   \"Drop-off Location\": \"Albuquerque, New Mexico 87121\",   \"Drop-off Time\": \"Sun, Aug 18, 07:32 MDT\",   \"Total Rate\": \"$1163,93\",   \"Rate Per Mile\": \"$3.82/mi\" }"
+  },
+  {
+    "source_image": "a8.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 15.04,
+    "llm_output_raw": "{\"load_number\": \"T-116Q2V1FP\", \"pickup_location\": \"Spot\", \"pickup_time\": \"1h 8m\", \"drop_off_location\": \"AMA1Amarillo,TX79108\", \"drop_off_time\": \"Sat, Aug 17, 12:04 MDT\", \"total_rate\": \"$711,07\", \"rate_per_ mile\": \"$2.24/mi\"}"
+  },
+  {
+    "source_image": "a8.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.06,
+    "llm_output_raw": "{   \\\"Load Number\\\": \\\"T-116Q2V1FP\\\",   \\\"Pickup Location\\\": \\\"AMAZarillo,TX79108\\\",   \\\"Pickup Time\\\": \\\"1h 8m\\\",   \\\"Drop-off Location\\\": \\\"ABQ1ALBUQUERQUE,New Mexico\\\",   \\\"Drop-off Time\\\": \\\"Sat,Aug 17,12:04 MDT\\\",   \\\"Total Rate\\\": \\\"$711,07\\\",   \\\"Rate Per Mile\\\": \\\"$2.24/mi\\\" }"
+  },
+  {
+    "source_image": "a8.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 18.63,
+    "llm_output_raw": "{   \"Load Number\": \"T-116Q2V1FP\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"Sat, Aug 17, 05:45 CDT\",   \"Drop-off Location\": \"ALBUQUERQUE,New Mexico\",   \"Drop-off Time\": \"Sat, Aug 17, 12:04 MDT\",   \"Total Rate\": \"$711,07\",   \"Rate Per Mile\": \"$2.24/mi\" } ```   #### Solution 1:  ```json {   \"Load Number\": \"T-116Q2V1FP\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"Sat, Aug 17, 05:45 CDT\",   \"Drop-off Location\": \"ALBUQUERQUE,New Mexico\",   \"Drop-off Time\": \"Sat, Aug 17, 12:04 MDT\",   \"Total Rate\": \"$711,07\",   \"Rate Per Mile\": \"$2.24/mi\" }"
+  },
+  {
+    "source_image": "a9.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 17.09,
+    "llm_output_raw": "{\"load_number\": \"114F61LDK\", \"pickup_location\": \"ELP1 EL PA5O, Texas 79928\", \" pickup_time\": \"Sun, Aug 18, 04:30 MDT\", \"drop_off_location\": \"LBB5 LUBBOCK, Texas 79403\", \"drop_off_time\": \"Sun, Aug 18, 13:08 CDT\", \"total_rate\": \"$1281,19\", \"rate_per_mile\": \"$3.69/mi\"}"
+  },
+  {
+    "source_image": "a9.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.61,
+    "llm_output_raw": "{   \"Load Number\": \"114F61LDK\",   \"Pickup Location\": \"EL PA5O, Texas 79928\",   \"Pickup Time\": \"1d 2h\",   \"Drop-off Location\": \"347 mi\",   \"Drop-off Time\": \"Sun, Aug 18, 04:30 MDT\",   \"Total Rate\": \"$1281,19\",   \"Rate Per Mile\": \"$3.69/mi\" }"
+  },
+  {
+    "source_image": "a9.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 18.27,
+    "llm_output_raw": "{   \"Load Number\": \"114F61LDK\",   \"Pickup Location\": \"ELP1 EL PA5O, Texas 79928\",   \"Pickup Time\": \"Sun, Aug 18, 04:30 MDT\",   \"Drop-off Location\": \"LBB5 LUBBOCK,Texas79403\",   \"Drop-off Time\": \"Sun,Aug 18,13:08 CDT\",   \"Total Rate\": \"$1281,19\",   \"Rate Per Mile\": \"$3.69/mi\" }"
+  },
+  {
+    "source_image": "a10.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 15.62,
+    "llm_output_raw": "{\"load number\": \"111C2H\", \"pickup location\": \"IND1WH White Town, IN 46075\", \"pickup time\": \" Sun, Aug 18, 03:00 EDT\", \"drop-off location\": \"MDW5 Crest Hill, Illinois 60403\", \"drop-off time\": \" Sun,Aug 18,06:27 CDT\", \"total rate\": \"$951.37\", \"rate per mile\": \"$5.69\"}"
+  },
+  {
+    "source_image": "a10.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 8.5,
+    "llm_output_raw": "{\"Load Number\": \"111C2HNDW\", \"Pickup Location\": \"IND1WHITESTOWN,IN 46075\", \"Pickup Time\": \"22h 57m\", \"Drop-off Location\": \"53'Trailer\", \"Drop-off Time\": \"Sat, Aug 18, 03:00 EDT\", \"Total Rate\": \"951,37\", \"Rate Per Mile\": \"5.69/mi\"}`  **Note:** The pickup location should be in the format of \"Latitude,Longitude\" or \"City,State,Country\". For simplicity, I have assumed the pickup location to be \"53'Trailer\". The pickup time should be in the format of \"HH:MM\". The drop-off location should be \"City,State,Country\". The total rate should be in the format of \"$Amount\", and the rate per mile should be in the format of \"$Amount/mile\". If you want to parse the total rate and rate per mile correctly, you will need to make some adjustments.  Here is an updated response:  ```json {\"Load Number\": \"111C2HNDW\", \"Pickup Location\": \"53'Trailer\", \"Pickup Time\": \"22h 57m\", \"Drop-off Location\": \"IND1WHITESTOWN,IN 46075\", \"Drop-off Time\": \"Sat, Aug 18, 03:00 EDT\", \"Total Rate\": \"951,37\", \"Rate Per Mile\": \"5.69/mile\"}"
+  },
+  {
+    "source_image": "a10.jpg",
+    "ocr_time": 0.6,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.33,
+    "llm_output_raw": "{   \"Load Number\": \"111C2HNDW\",   \"Pickup Location\": \"22h 57m IND1WHITESTOWN,IN 46075\",   \"Pickup Time\": \"Sun, Aug 18, 03:00 EDT\",   \"Drop-off Location\": \"53'Trailer  MDW5 CREST HILL,ILLINOIS 60403\",   \"Drop-off Time\": \"Sun,Aug 18,06:27 CDT\",   \"Total Rate\": \"$951,37\",   \"Rate Per Mile\": \"$5.69/mi\" }"
+  },
+  {
+    "source_image": "a11.jpg",
+    "ocr_time": 0.73,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 14.84,
+    "llm_output_raw": "{\"load_number\": \"1117VWVW1\", \"pickup location\": \"Spot\", \"pickup time\": \"13h 47m\", \"drop_off location\": \"TUL5 TULSA,Oklahoma 74116\", \"drop_ off time\": \"Sun, Aug 18,04:29 CDT\", \"total rate\": \"$877,98\", \"rate per mile\": \"$1.56/mi\"}"
+  },
+  {
+    "source_image": "a11.jpg",
+    "ocr_time": 0.73,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.42,
+    "llm_output_raw": "{   \"Load Number\": \"1117VWVW1\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"13h 47m\",   \"Drop-off Location\": \"TUL5 TULSA,Oklahoma 74116\",   \"Drop-off Time\": \"Sun,Aug 18,04:29 CDT\",   \"Total Rate\": \"$1.56/mi\",   \"Rate Per Mile\": \"$877,98\" }"
+  },
+  {
+    "source_image": "a11.jpg",
+    "ocr_time": 0.73,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.69,
+    "llm_output_raw": "{   \"Load Number\": \"1117VWVW1\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"Sat,Aug 17.16:45 CDT\",   \"Drop-off Location\": \"TUL5 TULSA,Oklahoma 74116\",   \"Drop-off Time\": \"Sun,Aug 18,04:29 CDT\",   \"Total Rate\": \"$877,98\",   \"Rate Per Mile\": \"$1.56/mi\" }"
+  },
+  {
+    "source_image": "a12.jpg",
+    "ocr_time": 0.83,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 15.59,
+    "llm_output_raw": "{\"load_number\": \"115L1W2PY\", \"pickup_location\": \"HIN9 WHITELAND,Indiana 46184\", \"pickup_time\": \"19h 57m\", \"drop_off_location\": \"HMC9 Liberty,Missouri 64068\", \"drop_off_time\": \"06:31 CDT\", \"total_rate\": \"$1654.35\", \" rate_per_ mile\": \"$3.32/mi\"}"
+  },
+  {
+    "source_image": "a12.jpg",
+    "ocr_time": 0.83,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 3.98,
+    "llm_output_raw": "{   \\\"Load Number\\\": \\\"115L1W2PY\\\",   \\\"Pickup Location\\\": \\\"HIN9 WHITELAND,Indiana 46184\\\",   \\\"Pickup Time\\\": \\\"19h 57m\\\",   \\\"Drop-off Location\\\": \\\"HMC9 Liberty,Missouri 64068\\\",   \\\"Drop-off Time\\\": \\\"Sun,Aug 18,06:31 CDT\\\",   \\\"Total Rate\\\": \\$1654,35,   \\\"Rate Per Mile\\\": \\$3.32/mi }"
+  },
+  {
+    "source_image": "a12.jpg",
+    "ocr_time": 0.83,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.46,
+    "llm_output_raw": "{   \"Load Number\": \"115L1W2PY\",   \"Pickup Location\": \"HIN9 WHITELAND,Indiana 46184\",   \"Pickup Time\": \"Sat,Aug 17,21:00 EDT\",   \"Drop-off Location\": \"HMC9 Liberty,Missouri 64068\",   \"Drop-off Time\": \"Sun,Aug 18,06:31 CDT\",   \"Total Rate\": \"$1654,35\",   \"Rate Per Mile\": \"$3.32/mi\" }"
+  },
+  {
+    "source_image": "a13.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 15.22,
+    "llm_output_raw": "{'Load Number': '1148TFTZM', 'Pickup Location': 'IND1WHITESTOWN,IN 46075', 'Pickup Time': '01:00 EDT', 'Drop-off Location': 'MDW5 CREST HILL,ILLINOIS60403', 'Drop-off Time': '04:26 CDT', 'Total Rate': '$951,37', 'Rate Per Mile': '$5.69/mi'}"
+  },
+  {
+    "source_image": "a13.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.84,
+    "llm_output_raw": "{   \"Load Number\": \"1148TFTZM\",   \"Pickup Location\": \"1d 0h IND1WHITESTOWN,IN 46075\",   \"Pickup Time\": \"Sun, Aug 18, 01:00 EDT\",   \"Drop-off Location\": \"53' Trailer MDW5 CREST HILL,ILLINOIS60403\",   \"Drop-off Time\": \"Sun,Aug 18,04:26 CDT\",   \"Total Rate\": \"$951,37\",   \"Rate Per Mile\": \"$5.69/mi\" }"
+  },
+  {
+    "source_image": "a13.jpg",
+    "ocr_time": 0.66,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 18.09,
+    "llm_output_raw": "{   \"Load Number\": \"1148TFTZM\",   \"Pickup Location\": \"1d 0h IND1WHITESTOWN,IN 46075\",   \"Pickup Time\": \"Sun, Aug 18, 01:00 EDT\",   \"Drop-off Location\": \"MDW5 CREST HILL,ILLINOIS60403\",   \"Drop-off Time\": \"Sun,Aug 18,04:26 CDT\",   \"Total Rate\": \"$951,37\",   \"Rate Per Mile\": \"$5.69/mi\" }"
+  },
+  {
+    "source_image": "a14.jpg",
+    "ocr_time": 0.56,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 18.04,
+    "llm_output_raw": "{ \"Load Number\": \"T-111JTB6FK\", \"Pickup Location\": \"FWA4 FORT WAYNE,Indiana 46809\", \"Pickup Time\": \"Sat, Aug 17, 06:22 EDT\", \"Drop-off Location\": \"SAV3 Macon,Georgia 31216\", \"Drop-off Time\": \" SunAug 18,18:24 EDT\", \"Total Rate\": \" $1319,67\", \"Rate Per Mile\": \" $1.76/mi\" }"
+  },
+  {
+    "source_image": "a14.jpg",
+    "ocr_time": 0.56,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.62,
+    "llm_output_raw": "{   \"Load Number\": \"T-111JTB6FK\",   \"Pickup Location\": \"FWA4 FORT WAYNE,Indiana 46809\",   \"Pickup Time\": \"6h 18m\",   \"Drop-off Location\": \"SAV3 Macon,Georgia 31216\",   \"Drop-off Time\": \"SunAug 18,18:24 EDT\",   \"Total Rate\": \"$1.76/mi\",   \"Rate Per Mile\": \"$1319,67\" }"
+  },
+  {
+    "source_image": "a14.jpg",
+    "ocr_time": 0.56,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 17.68,
+    "llm_output_raw": "{   \"Load Number\": \"T-111JTB6FK\",   \"Pickup Location\": \"Spot\",   \"Pickup Time\": \"Sat, Aug 17, 06:22 EDT\",   \"Drop-off Location\": \"SAV3 Macon,Georgia 31216\",   \"Drop-off Time\": \"Sun Aug 18,18:24 EDT\",   \"Total Rate\": \"$1319,67\",   \"Rate Per Mile\": \"$1.76/mi\" }"
+  },
+  {
+    "source_image": "a15.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "mistral-7b",
+    "llm_response_time": 17.2,
+    "llm_output_raw": "{\"load_number\": \"115ZVR5ML\", \"pickup_location\": \"IND2PLAINFIELD,IN 46168\", \"pickup_time\": \"Sat,Aug 17,11:30 EDT\", \"drop_off_location\": \"MDW5CREST Hill,ILLINOIS 60403\", \"drop_off_time\": \"Sat, Aug 17, 15:56 CDT\", \"total_rate\": \"$1022,07\", \"rate_per_mile\": \"$5,29\"}"
+  },
+  {
+    "source_image": "a15.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "llama-3.2-1b",
+    "llm_response_time": 4.68,
+    "llm_output_raw": "{   \\\"Load Number\\\": \\\"115ZVR5ML\\\",   \\\"Pickup Location\\\": \\\"IND2PLAINFIELD,IN 46168\\\",   \\\"Pickup Time\\\": \\\"9h 30m\\\",   \\\"Drop-off Location\\\": \\\"53'Trailer \\\",   \\\"Drop-off Time\\\": \\\"Fri,16 Aug 11:30 Eastern D..\\\",   \\\"Total Rate\\\": \\\"$1022,07\\\",   \\\"Rate Per Mile\\\": \\\"$5.29/mi\\\" }"
+  },
+  {
+    "source_image": "a15.jpg",
+    "ocr_time": 0.63,
+    "llm_model": "phi-3.1-mini",
+    "llm_response_time": 18.05,
+    "llm_output_raw": "{   \"Load Number\": \"115ZVR5ML\",   \"Pickup Location\": \"9h 30m\",   \"Pickup Time\": \"Sat,Aug 17,11:30 EDT\",   \"Drop-off Location\": \"5h 57m\",   \"Drop-off Time\": \"Sat,Aug 17,15:56 CDT\",   \"Total Rate\": \"$1022,07\",   \"Rate Per Mile\": \"$5.29/mi\" }"
+  }
+]

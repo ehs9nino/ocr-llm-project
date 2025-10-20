@@ -1,37 +1,109 @@
-# Virtual environment
+# =========================
+# Environments / tooling
+# =========================
 venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.mongorc.js
 
-# Python bytecode and cache
+# VS Code / IDE
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+
+# OS metadata (Windows Zone.Identifier “alt streams”)
+*:*Zone.Identifier
+*.Zone.Identifier
+
+
+
+
+# Python bytecode/cache
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
 
-# Log, DB, cache
+# =========================
+# Project-specific folders
+# =========================
+# these are local-only working dirs
+paperminer/
+paper_miner/
+batch_runner/
+evaluation/
+OCR_Evaluation/ocr_outputs/
+OCR_Evaluation/myenv/
+OCR_Evaluation/testData/
+OCR_Evaluation/testData_drivers/
+
+# main raw data / uploads
+uploads/
+test_data/
+data/
+weights/
+models/
+
+# =========================
+# Generated artifacts
+# =========================
+output/
+outputs/
 *.log
 *.sqlite
 *.db
+*.tmp
+*.bak
 
-# IDE & OS files
-.DS_Store
-.idea/
-.vscode/
-*.code-workspace
+# Big result files; keep only curated small examples manually
+*.csv
+*.json
+*.tsv
+*.parquet
 
-# Output and data directories
-output/
-uploads/
-test_data/
+
+# LLM_Evaluations: ignore everything in it…
+LLM_Evaluations/**
+
+!LLM_Evaluations/ratecon_evaluation.ipynb
+!LLM_Evaluations/output_ratecon_raw.json
+!LLM_Evaluations/output_ratecon_multi.json
+!LLM_Evaluations/output_cdl_dual.json
+!LLM_Evaluations/output_cdl_raw.json
+
+
+# Let’s explicitly re-allow the few JSON/CSV you REALLY need in git:
+!OCR_Evaluation/ocr_1.ipynb
+!OCR_Evaluation/ocr_2.ipynb
+!OCR_Evaluation/ocr_3.ipynb
+
+!LLM_Evaluations/output_ratecon_raw.json          
+!LLM_Evaluations/output_ratecon_multi.json 
+!LLM_Evaluations/output_cdl_dual.json 
+!LLM_Evaluations/output_cdl_raw.json 
+
+
+# Images: by default ignore all, then allow only your tiny demo images if needed
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+!static/background.jpg
+
+!OCR_Evaluation/output.png                    # example: small figure you want visible
+!OCR_Evaluation/output_boxes.jpg              # example
 
 # Model weights
 *.gguf
 *.bin
 *.onnx
-weights/
 
-# Environment variables
-.env
-
-# Node or frontend temp (in case of frontend extensions)
+# Node / build
 node_modules/
 dist/
+
+# Env vars
+.env

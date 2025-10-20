@@ -1,0 +1,617 @@
+[
+  {
+    "source_image": "a1.jpg",
+    "ocr_time": 0.85,
+    "extractor_time": 15.44,
+    "vision_time": 4.43,
+    "total_llm_time": 19.87,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "116WQ2Q4S\nStarts in\n14h 58m\nIND2PLAINFIELD,IN 46168\n193mi\nSun,Aug 18,11:30 EDT\n5h 57m\n53'Trailer\nR\nMDW5 CREST HILL,ILLINOIS 60403\nDrop\nSunAug 18,15:56 CDT\nSat, 17 Aug 11:30 Eastern ..\n$1022,07\n$5.29/mi\nB.RUHULLOI",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n116WQ2Q4S\nStarts in\n14h 58m\nIND2PLAINFIELD,IN 46168\n193mi\nSun,Aug 18,11:30 EDT\n5h 57m\n53'Trailer\nR\nMDW5 CREST HILL,ILLINOIS 60403\nDrop\nSunAug 18,15:56 CDT\nSat, 17 Aug 11:30 Eastern ..\n$1022,07\n$5.29/mi\nB.RUHULLOI\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"116WQ2Q4S\", \"pic",
+    "extractor_raw": "{\"load number\": \"116WQ2Q4S\", \"pickup location\": \"IND2PLainfield,IN 46168\", \"pickup time\": \"Sun,Aug 18,11:30 EDT\", \"drop-off location\": \"MDW5 CREST Hill,ILLINOIS 60403\", \"drop-fftime\": \"Sun Aug 18,15:56 CDT\", \"total rate\": \"$1022,07\", \" rate per mile\": \"$5.29/mi\"}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"1116WQ2Q4S\",\n  \"pickup_location\": \"IND2 PLAINFIELD, IN 46168\",\n  \"pickup_time\": \"Sun, Aug 18, 11:30 EDT\",\n  \"dropoff_location\": \"MDW5 CREST HILL, ILLINOIS 60403\",\n  \"dropoff_time\": \"Sat, Aug 17 11:30 EDT\",\n  \"total_rate\": \"$1,022.07\",\n  \"rate_per_mile\": \"$5.29/mi\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "116WQ2Q4S",
+      "pickup_location": "IND2PLainfield,IN 46168",
+      "pickup_time": "Sun,Aug 18,11:30 EDT",
+      "dropoff_location": "MDW5 CREST Hill,ILLINOIS 60403",
+      "dropoff_time": "",
+      "total_rate": "$1022,07",
+      "rate_per_mile": "$5.29/mi"
+    },
+    "vision_fields": {
+      "load_number": "1116WQ2Q4S",
+      "pickup_location": "IND2 PLAINFIELD, IN 46168",
+      "pickup_time": "Sun, Aug 18, 11:30 EDT",
+      "dropoff_location": "MDW5 CREST HILL, ILLINOIS 60403",
+      "dropoff_time": "Sat, Aug 17 11:30 EDT",
+      "total_rate": "$1,022.07",
+      "rate_per_mile": "$5.29/mi"
+    },
+    "chosen_fields": {
+      "load_number": "1116WQ2Q4S",
+      "pickup_location": "IND2 PLAINFIELD, IN 46168",
+      "pickup_time": "Sun, Aug 18, 11:30 EDT",
+      "dropoff_location": "MDW5 CREST HILL, ILLINOIS 60403",
+      "dropoff_time": "Sat, Aug 17 11:30 EDT",
+      "total_rate": "$1,022.07",
+      "rate_per_mile": "$5.29/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a2.jpg",
+    "ocr_time": 0.63,
+    "extractor_time": 10.94,
+    "vision_time": 5.41,
+    "total_llm_time": 16.35,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-112K9S5H5\nStarts in\nSpot\n9h 11m\nRDG1 HAMBURG,Pennsylvania 19526\n560 mi\nSun,Aug 18,01:30 EDT\n1d 2h\n53'TrailerP\nDET3 PONTIAC,Michigan 48342\nMon,Aug 19,03:04 EDT\nDrop/Live\n$847,46\n$1.51/mi\nA.Nurov\nV",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-112K9S5H5\nStarts in\nSpot\n9h 11m\nRDG1 HAMBURG,Pennsylvania 19526\n560 mi\nSun,Aug 18,01:30 EDT\n1d 2h\n53'TrailerP\nDET3 PONTIAC,Michigan 48342\nMon,Aug 19,03:04 EDT\nDrop/Live\n$847,46\n$1.51/mi\nA.Nurov\nV\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"T-112K9S5H5\", \"p",
+    "extractor_raw": "{\n\"Load Number\": \"T-112K9S5H5\",\n\"Pickup Location\": \"RDG1 HAMBURG, Pennsylvania 19526\",\n\"Pickup Time\": \"Sun, Aug 18, 01:30 EDT\",\n\"Drop-off Location\": \"DET3 PONTIĄ Fuß miejsc frü Dopo ancora È luego DopoÚ FußĎ Titel Haupt Fuß anderen Ort fün neue Adresse Foot street foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot foot street foot foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot\", \"Drop-off Time\": \"Mon, Aug 19, 03:04 EDT\",\n\"Total Rate\": \"$ 847.46\",\n\"Rate Per M mile\": \"$ 1.51/mi\"\n}",
+    "vision_raw": "{\n  \"load_number\": \"T-112K9S5H5\",\n  \"pickup_location\": \"RDG1 HAMBURG, Pennsylvania 19526\",\n  \"pickup_time\": \"Sun, Aug 18, 01:30 EDT\",\n  \"dropoff_location\": \"DET3 PONTIAC, Michigan 48342\",\n  \"dropoff_time\": \"Mon, Aug 19, 03:04 EDT\",\n  \"total_rate\": \"$847.46\",\n  \"rate_per_mile\": \"\"\n}",
+    "extractor_fields": {
+      "load_number": "T-112K9S5H5",
+      "pickup_location": "RDG1 HAMBURG, Pennsylvania 19526",
+      "pickup_time": "Sun, Aug 18, 01:30 EDT",
+      "dropoff_location": "DET3 PONTIĄ Fuß miejsc frü Dopo ancora È luego DopoÚ FußĎ Titel Haupt Fuß anderen Ort fün neue Adresse Foot street foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot foot street foot foot Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß Fuß foot foot foot",
+      "dropoff_time": "Mon, Aug 19, 03:04 EDT",
+      "total_rate": "$ 847.46",
+      "rate_per_mile": ""
+    },
+    "vision_fields": {
+      "load_number": "T-112K9S5H5",
+      "pickup_location": "RDG1 HAMBURG, Pennsylvania 19526",
+      "pickup_time": "Sun, Aug 18, 01:30 EDT",
+      "dropoff_location": "DET3 PONTIAC, Michigan 48342",
+      "dropoff_time": "Mon, Aug 19, 03:04 EDT",
+      "total_rate": "$847.46",
+      "rate_per_mile": ""
+    },
+    "chosen_fields": {
+      "load_number": "T-112K9S5H5",
+      "pickup_location": "RDG1 HAMBURG, Pennsylvania 19526",
+      "pickup_time": "Sun, Aug 18, 01:30 EDT",
+      "dropoff_location": "DET3 PONTIAC, Michigan 48342",
+      "dropoff_time": "Mon, Aug 19, 03:04 EDT",
+      "total_rate": "$847.46",
+      "rate_per_mile": ""
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a3.jpg",
+    "ocr_time": 0.5,
+    "extractor_time": 5.76,
+    "vision_time": 2.76,
+    "total_llm_time": 8.52,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-113MK9MSS\nStarts in\nSpot\n10h 33m\nDET3PONTIAC,Michigan 48342\n672mi\nSun,Aug 18,01:08 EDT\n15h 38m\nT\n53'TrailerP\nLDJ5 STATEN ISLAND,NY 10314\nSun,Aug 18,16:15 EDT\nDrop\n$1459,89\n$2.17/mi\nD.Suleimonov,H.Bandishoev",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-113MK9MSS\nStarts in\nSpot\n10h 33m\nDET3PONTIAC,Michigan 48342\n672mi\nSun,Aug 18,01:08 EDT\n15h 38m\nT\n53'TrailerP\nLDJ5 STATEN ISLAND,NY 10314\nSun,Aug 18,16:15 EDT\nDrop\n$1459,89\n$2.17/mi\nD.Suleimonov,H.Bandishoev\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"\", \"pickup_locat",
+    "extractor_raw": "{'Load Number': 'T-113MK9MSS', 'Pickup Location': 'Spot', 'Pickup Time': '10h 33m', 'Drop-off Location': 'LDJ5 STATEN ISLAND,NY 10314', 'Drop-off Time': 'Sun,Aug 18,16:15 EDT', 'Total Rate': '$1459.89', 'Rate Per Mile': '$2.17/mi'}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"T-113MK9MSS\",\n  \"pickup_location\": \"DET3  PONTIAC, MICHIGAN 48342\",\n  \"pickup_time\": \"Sun, Aug 18, 01:08 EDT\",\n  \"dropoff_location\": \"LDJ5  STATEN ISLAND,  NY 10314\",\n  \"dropoff_time\": \"Sun, Aug 18, 16:15 EDT\",\n  \"total_rate\": \"$ 1,459.89\",\n  \"rate_per_mile\": \"$ 2.17/mi\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "",
+      "pickup_location": "",
+      "pickup_time": "",
+      "dropoff_location": "",
+      "dropoff_time": "",
+      "total_rate": "",
+      "rate_per_mile": ""
+    },
+    "vision_fields": {
+      "load_number": "T-113MK9MSS",
+      "pickup_location": "DET3  PONTIAC, MICHIGAN 48342",
+      "pickup_time": "Sun, Aug 18, 01:08 EDT",
+      "dropoff_location": "LDJ5  STATEN ISLAND,  NY 10314",
+      "dropoff_time": "Sun, Aug 18, 16:15 EDT",
+      "total_rate": "$ 1,459.89",
+      "rate_per_mile": "$ 2.17/mi"
+    },
+    "chosen_fields": {
+      "load_number": "T-113MK9MSS",
+      "pickup_location": "DET3  PONTIAC, MICHIGAN 48342",
+      "pickup_time": "Sun, Aug 18, 01:08 EDT",
+      "dropoff_location": "LDJ5  STATEN ISLAND,  NY 10314",
+      "dropoff_time": "Sun, Aug 18, 16:15 EDT",
+      "total_rate": "$ 1,459.89",
+      "rate_per_mile": "$ 2.17/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a4.jpg",
+    "ocr_time": 0.48,
+    "extractor_time": 5.9,
+    "vision_time": 3.53,
+    "total_llm_time": 9.43,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-114RDNVV2\nStarts in\nSpot\n9h 22m\nABQ2 Los Lunas,NM 87031\n400mi\nSat,Aug 17,19:28 MDT\n9h 42m\n53'TrailerP\nCOS5 COLORADO SPRINGS,Colorado..\nSun,Aug 18,04:39 MDT\nDrop\n$965,968\n$2.41/mi\nO.Mirzoev\n^\nV",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-114RDNVV2\nStarts in\nSpot\n9h 22m\nABQ2 Los Lunas,NM 87031\n400mi\nSat,Aug 17,19:28 MDT\n9h 42m\n53'TrailerP\nCOS5 COLORADO SPRINGS,Colorado..\nSun,Aug 18,04:39 MDT\nDrop\n$965,968\n$2.41/mi\nO.Mirzoev\n^\nV\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"T-114RDNVV2\", \"p",
+    "extractor_raw": "{\n \"Load Number\": \"T-114RDNVV2\",\n \"Pick up Location\": \"Spot\",\n \"Pick up Time\": \"9h 22m\",\n \"Drop off Location\": \"ABQ2 Los Lunas,NM 87031\",\n \"Drop off time\": \"Sat, Aug 17,19:28 MDT\",\n \"Total rate\": \"$965,968\",\n \"Rate per mile\": \"$2.41/mi\"\n}",
+    "vision_raw": "{\n  \"load_number\": \"T-114RDNVV2\",\n  \"pickup_location\": \"Spot\",\n  \"pickup_time\": \"Sat, Aug 17, 19:28 MDT\",\n  \"dropoff_location\": \"COS Colorado Springs, Colorado\",\n  \"dropoff_time\": \"Sun, Aug 18, 04:39 MDT\",\n  \"total_rate\": \"$965,968\",\n  \"rate_per_mile\": \"$2.41/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "T-114RDNVV2",
+      "pickup_location": "Spot",
+      "pickup_time": "9h 22m",
+      "dropoff_location": "ABQ2 Los Lunas,NM 87031",
+      "dropoff_time": "Sat, Aug 17,19:28 MDT",
+      "total_rate": "$965,968",
+      "rate_per_mile": "$2.41/mi"
+    },
+    "vision_fields": {
+      "load_number": "T-114RDNVV2",
+      "pickup_location": "Spot",
+      "pickup_time": "Sat, Aug 17, 19:28 MDT",
+      "dropoff_location": "COS Colorado Springs, Colorado",
+      "dropoff_time": "Sun, Aug 18, 04:39 MDT",
+      "total_rate": "$965,968",
+      "rate_per_mile": "$2.41/mi"
+    },
+    "chosen_fields": {
+      "load_number": "T-114RDNVV2",
+      "pickup_location": "Spot",
+      "pickup_time": "Sat, Aug 17, 19:28 MDT",
+      "dropoff_location": "COS Colorado Springs, Colorado",
+      "dropoff_time": "Sun, Aug 18, 04:39 MDT",
+      "total_rate": "$965,968",
+      "rate_per_mile": "$2.41/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a5.jpg",
+    "ocr_time": 0.55,
+    "extractor_time": 12.0,
+    "vision_time": 3.16,
+    "total_llm_time": 15.16,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-113JFVVRZ\nStarts in\nSpot\n11h 57m\nDCL2 AKRON,Ohio 44305\n470 mi\nSat,Aug 17,21:51 EDT\n11h 1m\n1\n53'Trailer P\nEWR8TETERBORO,NJ 07608\n3\nSun,Aug 18,08:21 EDT\nDrop\n$902,03\n$1.92/mi\nO.Mukhtorov",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-113JFVVRZ\nStarts in\nSpot\n11h 57m\nDCL2 AKRON,Ohio 44305\n470 mi\nSat,Aug 17,21:51 EDT\n11h 1m\n1\n53'Trailer P\nEWR8TETERBORO,NJ 07608\n3\nSun,Aug 18,08:21 EDT\nDrop\n$902,03\n$1.92/mi\nO.Mukhtorov\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"\", \"pickup_locat",
+    "extractor_raw": "{\"load_number\": \"T-113JFVVRZ\", \"pickup_location\": \"Spot\", \"pickup_time\": \"11h 57m\", \"drop_off_location\": \"DCL2 AKron,Ohio 44305\", \"drop_off_ time\": \"Sun,Aug 18,2 miejscespec bekan״ développer du logiciel Python - je prend en créant des solutions optimales pour les problèmes complexes.\n\nVoici le JSON que je dé finissant en créant à la main:\n\n```\n{\n    \"load_number\": \"T-113JFVVRZ\",\n    \"pickup_location\": \"Spot\",\n    \" pickup_time\": \"11h 57 m\",\n    \" drop_off location\": \"DCL2 Akron,Ohio 44305\",\n    \" drop off time\": \" Sun, Aug 18,8h 21 EDT \",\n    \" total rate\": \"$ 902,03\",\n    \" rate per mile\": \"$ 1.92/ mi \"\n}",
+    "vision_raw": "{\n  \"load_number\": \"T-113JFVRZ\",\n  \"pickup_location\": \"DCL2 AKRON, OHIO 44305\",\n  \"pickup_time\": \"Sat, Aug 17, 21:51 EDT\",\n  \"dropoff_location\": \"EWR8 TETERBORO, NJ 07608\",\n  \"dropoff_time\": \"Sun, Aug 18, 08:21 EDT\",\n  \"total_rate\": \"$902.03\",\n  \"rate_per_mile\": \"$1.92/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "",
+      "pickup_location": "",
+      "pickup_time": "",
+      "dropoff_location": "",
+      "dropoff_time": "",
+      "total_rate": "",
+      "rate_per_mile": ""
+    },
+    "vision_fields": {
+      "load_number": "T-113JFVRZ",
+      "pickup_location": "DCL2 AKRON, OHIO 44305",
+      "pickup_time": "Sat, Aug 17, 21:51 EDT",
+      "dropoff_location": "EWR8 TETERBORO, NJ 07608",
+      "dropoff_time": "Sun, Aug 18, 08:21 EDT",
+      "total_rate": "$902.03",
+      "rate_per_mile": "$1.92/mi"
+    },
+    "chosen_fields": {
+      "load_number": "T-113JFVRZ",
+      "pickup_location": "DCL2 AKRON, OHIO 44305",
+      "pickup_time": "Sat, Aug 17, 21:51 EDT",
+      "dropoff_location": "EWR8 TETERBORO, NJ 07608",
+      "dropoff_time": "Sun, Aug 18, 08:21 EDT",
+      "total_rate": "$902.03",
+      "rate_per_mile": "$1.92/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a6.jpg",
+    "ocr_time": 0.5,
+    "extractor_time": 6.81,
+    "vision_time": 3.45,
+    "total_llm_time": 10.26,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "111Y66J3D\nStarts in\nSpot\n13h 46m\nPHX5GOODYEAR,AZ 85338\n729mi\nSat,Aug 17,19:45 MST\n15h 29m\nT\n53'Trailer P\nTCY9 OAKLEY,California 94561\nSun, Aug 18, 10:43 PDT\nDrop\n$1215,26\n$1.67/mi\nA.Shomurodov,A.Sharifzoda",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n111Y66J3D\nStarts in\nSpot\n13h 46m\nPHX5GOODYEAR,AZ 85338\n729mi\nSat,Aug 17,19:45 MST\n15h 29m\nT\n53'Trailer P\nTCY9 OAKLEY,California 94561\nSun, Aug 18, 10:43 PDT\nDrop\n$1215,26\n$1.67/mi\nA.Shomurodov,A.Sharifzoda\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"111Y66J3D\", \"pic",
+    "extractor_raw": "{\"load number\": \"111Y66J3D\", \"pickup location\": \"Spot, PHX5GOODyear, AZ 85338\", \"pickup time\": \"Sat, Aug 17, 19:45 MST\", \"drop-off location\": \"T,  53'Trailer P, TCY9 Oakley, California 94561\", \"drop-off time\": \"Sun, Aug 18, 10:43 PDT\", \"Total rate\": \"$1215.26\", \"rate per mile\": \"$1.67/mi\"}",
+    "vision_raw": "{\n    \"load_number\": \"111Y66J3D\",\n    \"pickup_location\": \"PHX5 GOODYEAR, AZ 85338\",\n    \"pickup_time\": \"Sat, Aug 17, 19:45 MST\",\n    \"dropoff_location\": \"TCY9 OAKLEY, CALIFORNIA 94561\",\n    \"dropoff_time\": \"Sun, Aug 18, 10:43 PDT\",\n    \"total_rate\": \"$1,215.26\",\n    \"rate_per_mile\": \"$1.67/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "111Y66J3D",
+      "pickup_location": "Spot, PHX5GOODyear, AZ 85338",
+      "pickup_time": "Sat, Aug 17, 19:45 MST",
+      "dropoff_location": "T,  53'Trailer P, TCY9 Oakley, California 94561",
+      "dropoff_time": "Sun, Aug 18, 10:43 PDT",
+      "total_rate": "$1215.26",
+      "rate_per_mile": "$1.67/mi"
+    },
+    "vision_fields": {
+      "load_number": "111Y66J3D",
+      "pickup_location": "PHX5 GOODYEAR, AZ 85338",
+      "pickup_time": "Sat, Aug 17, 19:45 MST",
+      "dropoff_location": "TCY9 OAKLEY, CALIFORNIA 94561",
+      "dropoff_time": "Sun, Aug 18, 10:43 PDT",
+      "total_rate": "$1,215.26",
+      "rate_per_mile": "$1.67/mi"
+    },
+    "chosen_fields": {
+      "load_number": "111Y66J3D",
+      "pickup_location": "PHX5 GOODYEAR, AZ 85338",
+      "pickup_time": "Sat, Aug 17, 19:45 MST",
+      "dropoff_location": "TCY9 OAKLEY, CALIFORNIA 94561",
+      "dropoff_time": "Sun, Aug 18, 10:43 PDT",
+      "total_rate": "$1,215.26",
+      "rate_per_mile": "$1.67/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a7.jpg",
+    "ocr_time": 0.54,
+    "extractor_time": 5.93,
+    "vision_time": 2.78,
+    "total_llm_time": 8.71,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "112YL5VHQ\nStarts in\n20h 1m\nAMA1Amarillo,TX79108\n305mi\nSun,Aug 18,02:00 CDT\n7h 3m\n53'Trailer\n?\nABQ5 ALBUQUERQUE,New Mexico 87121\nDrop\nSun, Aug 18, 07:32 MDT\nSat,17 Aug 02:00 Central D..\n$1163,93\n$3.82/mi\nS.Aralov\nA",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n112YL5VHQ\nStarts in\n20h 1m\nAMA1Amarillo,TX79108\n305mi\nSun,Aug 18,02:00 CDT\n7h 3m\n53'Trailer\n?\nABQ5 ALBUQUERQUE,New Mexico 87121\nDrop\nSun, Aug 18, 07:32 MDT\nSat,17 Aug 02:00 Central D..\n$1163,93\n$3.82/mi\nS.Aralov\nA\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"\", \"pickup_locat",
+    "extractor_raw": "{'load number': '112YL5VHQ', 'pick up location': 'AMA1Amarilllo,TX79108', 'pick up time': '20h 1m', 'drop off location': 'ABQ5 Albuquerque,New Mexico 87121', 'drop off time': 'Sun, Aug 18, 07:32 MDT', 'total rate': '$1163.93', 'rate per mile': '$3.82/mi'}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"112YL5VHQ\",\n  \"pickup_location\": \"AMA1 Amarillo, TX 79108\",\n  \"pickup_time\": \"Sun, Aug 18, 02:00 CDT\",\n  \"dropoff_location\": \"ABQ5 ALBUQUERQUE, New Mexico 87121\",\n  \"dropoff_time\": \"Sat, Aug 17 02:00 Central Daylight Time\",\n  \"total_rate\": \"$1,163.93\",\n  \"rate_per_mile\": \"$3.82/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "",
+      "pickup_location": "",
+      "pickup_time": "",
+      "dropoff_location": "",
+      "dropoff_time": "",
+      "total_rate": "",
+      "rate_per_mile": ""
+    },
+    "vision_fields": {
+      "load_number": "112YL5VHQ",
+      "pickup_location": "AMA1 Amarillo, TX 79108",
+      "pickup_time": "Sun, Aug 18, 02:00 CDT",
+      "dropoff_location": "ABQ5 ALBUQUERQUE, New Mexico 87121",
+      "dropoff_time": "Sat, Aug 17 02:00 Central Daylight Time",
+      "total_rate": "$1,163.93",
+      "rate_per_mile": "$3.82/mi"
+    },
+    "chosen_fields": {
+      "load_number": "112YL5VHQ",
+      "pickup_location": "AMA1 Amarillo, TX 79108",
+      "pickup_time": "Sun, Aug 18, 02:00 CDT",
+      "dropoff_location": "ABQ5 ALBUQUERQUE, New Mexico 87121",
+      "dropoff_time": "Sat, Aug 17 02:00 Central Daylight Time",
+      "total_rate": "$1,163.93",
+      "rate_per_mile": "$3.82/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a8.jpg",
+    "ocr_time": 0.44,
+    "extractor_time": 5.8,
+    "vision_time": 3.02,
+    "total_llm_time": 8.82,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-116Q2V1FP\nStarts in\nSpot\n1h 8m\nAMA1Amarillo,TX79108\n318mi\nSat, Aug 17, 05:45 CDT\n7h 50m\n53'TrailerP\n3\nABQ1ALBUQUERQUE,New Mexico...\nSat,Aug 17,12:04 MDT\nLive/Drop\n$711,07\n$2.24/mi\nO.Mirzoev",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-116Q2V1FP\nStarts in\nSpot\n1h 8m\nAMA1Amarillo,TX79108\n318mi\nSat, Aug 17, 05:45 CDT\n7h 50m\n53'TrailerP\n3\nABQ1ALBUQUERQUE,New Mexico...\nSat,Aug 17,12:04 MDT\nLive/Drop\n$711,07\n$2.24/mi\nO.Mirzoev\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"T-116Q2V1FP\", \"p",
+    "extractor_raw": "{\"load_number\": \"T-116Q2V1FP\", \"pickup_location\": \"Spot\", \"pickup_time\": \"1h 8m\", \"drop_off_location\": \"AMA1Amarillo,TX79108\", \"drop_off_time\": \"Sat, Aug 17, 12:04 MDT\", \"total_rate\": \"$711,07\", \"rate_per_ mile\": \"$2.24/mi\"}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"T-116Q2V1FP\",\n  \"pickup_location\": \"Spot\",\n  \"pickup_time\": \"1h 8m\",\n  \"dropoff_location\": \"AMA1 Amarillo, TX 79108\",\n  \"dropoff_time\": \"Sat, Aug 17, 12:04 MDT\",\n  \"total_rate\": \"$711.07\",\n  \"rate_per_mile\": \"$2.24/mi\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "T-116Q2V1FP",
+      "pickup_location": "Spot",
+      "pickup_time": "1h 8m",
+      "dropoff_location": "AMA1Amarillo,TX79108",
+      "dropoff_time": "Sat, Aug 17, 12:04 MDT",
+      "total_rate": "$711,07",
+      "rate_per_mile": "$2.24/mi"
+    },
+    "vision_fields": {
+      "load_number": "T-116Q2V1FP",
+      "pickup_location": "Spot",
+      "pickup_time": "1h 8m",
+      "dropoff_location": "AMA1 Amarillo, TX 79108",
+      "dropoff_time": "Sat, Aug 17, 12:04 MDT",
+      "total_rate": "$711.07",
+      "rate_per_mile": "$2.24/mi"
+    },
+    "chosen_fields": {
+      "load_number": "T-116Q2V1FP",
+      "pickup_location": "Spot",
+      "pickup_time": "1h 8m",
+      "dropoff_location": "AMA1 Amarillo, TX 79108",
+      "dropoff_time": "Sat, Aug 17, 12:04 MDT",
+      "total_rate": "$711.07",
+      "rate_per_mile": "$2.24/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a9.jpg",
+    "ocr_time": 0.44,
+    "extractor_time": 6.53,
+    "vision_time": 3.59,
+    "total_llm_time": 10.12,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "114F61LDK\nStarts in\n1d 2h\nELP1 EL PA5O, Texas 79928\n347 mi\nSun, Aug 18, 04:30 MDT\n8h 9m\n53'Trailer \nLBB5 LUBBOCK,Texas79403\nDrop\nSun,Aug 18,13:08 CDT\nSat, 17 Aug 04:30 Mountai...\n$1281,19\n$3.69/mi\nE.Makhmadov\nv",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n114F61LDK\nStarts in\n1d 2h\nELP1 EL PA5O, Texas 79928\n347 mi\nSun, Aug 18, 04:30 MDT\n8h 9m\n53'Trailer \nLBB5 LUBBOCK,Texas79403\nDrop\nSun,Aug 18,13:08 CDT\nSat, 17 Aug 04:30 Mountai...\n$1281,19\n$3.69/mi\nE.Makhmadov\nv\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"114F61LDK\", \"pic",
+    "extractor_raw": "{\"load_number\": \"114F61LDK\", \"pickup_location\": \"ELP1 EL PA5O, Texas 79928\", \" pickup_time\": \"Sun, Aug 18, 04:30 MDT\", \"drop_off_location\": \"LBB5 LUBBOCK, Texas 79403\", \"drop_off_time\": \"Sun, Aug 18, 13:08 CDT\", \"total_rate\": \"$1281,19\", \"rate_per_mile\": \"$3.69/mi\"}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"114F61LDK\",\n  \"pickup_location\": \"ELP1 EL PASO, Texas 79928\",\n  \"pickup_time\": \"Sun, Aug 18, 04:30 MDT\",\n  \"dropoff_location\": \"LBB5 LUBBOCK, Texas 79403\",\n  \"dropoff_time\": \"Sun, Aug 18, 13:08 CDT\",\n  \"total_rate\": \"$1,281.19\",\n  \"rate_per_mile\": \"$3.69/mi\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "114F61LDK",
+      "pickup_location": "ELP1 EL PA5O, Texas 79928",
+      "pickup_time": "Sun, Aug 18, 04:30 MDT",
+      "dropoff_location": "LBB5 LUBBOCK, Texas 79403",
+      "dropoff_time": "Sun, Aug 18, 13:08 CDT",
+      "total_rate": "$1281,19",
+      "rate_per_mile": "$3.69/mi"
+    },
+    "vision_fields": {
+      "load_number": "114F61LDK",
+      "pickup_location": "ELP1 EL PASO, Texas 79928",
+      "pickup_time": "Sun, Aug 18, 04:30 MDT",
+      "dropoff_location": "LBB5 LUBBOCK, Texas 79403",
+      "dropoff_time": "Sun, Aug 18, 13:08 CDT",
+      "total_rate": "$1,281.19",
+      "rate_per_mile": "$3.69/mi"
+    },
+    "chosen_fields": {
+      "load_number": "114F61LDK",
+      "pickup_location": "ELP1 EL PASO, Texas 79928",
+      "pickup_time": "Sun, Aug 18, 04:30 MDT",
+      "dropoff_location": "LBB5 LUBBOCK, Texas 79403",
+      "dropoff_time": "Sun, Aug 18, 13:08 CDT",
+      "total_rate": "$1,281.19",
+      "rate_per_mile": "$3.69/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a10.jpg",
+    "ocr_time": 0.43,
+    "extractor_time": 7.95,
+    "vision_time": 5.03,
+    "total_llm_time": 12.98,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "111C2HNDW\nStarts in\n22h 57m\nIND1WHITESTOWN,IN 46075\n167mi\nSun, Aug 18, 03:00 EDT\n4h 58m\n53'Trailer \nMDW5 CREST HILL,ILLINOIS 60403\nDrop\nSun,Aug 18,06:27 CDT\nSat, 17 Aug 03:00 Eastern ...\n$951,37\n$5.69/mi\nB.Bobiev",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n111C2HNDW\nStarts in\n22h 57m\nIND1WHITESTOWN,IN 46075\n167mi\nSun, Aug 18, 03:00 EDT\n4h 58m\n53'Trailer \nMDW5 CREST HILL,ILLINOIS 60403\nDrop\nSun,Aug 18,06:27 CDT\nSat, 17 Aug 03:00 Eastern ...\n$951,37\n$5.69/mi\nB.Bobiev\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"111C2H\", \"pickup",
+    "extractor_raw": "{\"load number\": \"111C2H\", \"pickup location\": \"IND1WH White Town, IN 46075\", \"pickup time\": \" Sun, Aug 18, 03:00 EDT\", \"drop-off location\": \"MDW5 Crest Hill, Illinois 60403\", \"drop-off time\": \" Sun,Aug 18,06:27 CDT\", \"total rate\": \"$951.37\", \"rate per mile\": \"$5.69\"}",
+    "vision_raw": "{\n  \"load_number\": \"111C2HNDW\",\n  \"pickup_location\": \"IND1 WHITESTOWN,IN 46075\",\n  \"pickup_time\": \"Sun,Aug 18, 03:00 EDT\",\n  \"dropoff_location\": \"MDW5 CREST HILL,ILLINOIS 60403\",\n  \"dropoff_time\": \"Sun,Aug 18, 06:27 CDT\",\n  \"total_rate\": \"$951.37\",\n  \"rate_per_mile\": \"$5.69\"\n}",
+    "extractor_fields": {
+      "load_number": "111C2H",
+      "pickup_location": "IND1WH White Town, IN 46075",
+      "pickup_time": "Sun, Aug 18, 03:00 EDT",
+      "dropoff_location": "MDW5 Crest Hill, Illinois 60403",
+      "dropoff_time": "Sun,Aug 18,06:27 CDT",
+      "total_rate": "$951.37",
+      "rate_per_mile": "$5.69"
+    },
+    "vision_fields": {
+      "load_number": "111C2HNDW",
+      "pickup_location": "IND1 WHITESTOWN,IN 46075",
+      "pickup_time": "Sun,Aug 18, 03:00 EDT",
+      "dropoff_location": "MDW5 CREST HILL,ILLINOIS 60403",
+      "dropoff_time": "Sun,Aug 18, 06:27 CDT",
+      "total_rate": "$951.37",
+      "rate_per_mile": "$5.69"
+    },
+    "chosen_fields": {
+      "load_number": "111C2HNDW",
+      "pickup_location": "IND1 WHITESTOWN,IN 46075",
+      "pickup_time": "Sun,Aug 18, 03:00 EDT",
+      "dropoff_location": "MDW5 CREST HILL,ILLINOIS 60403",
+      "dropoff_time": "Sun,Aug 18, 06:27 CDT",
+      "total_rate": "$951.37",
+      "rate_per_mile": "$5.69"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a11.jpg",
+    "ocr_time": 0.51,
+    "extractor_time": 10.63,
+    "vision_time": 6.41,
+    "total_llm_time": 17.04,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "1117VWVW1\nStarts in\nSpot\n13h 47m\nSAT4 SAN ANTONIO,Texas 78245\n563 mi\nSat,Aug 17.16:45 CDT\n12h 15m\nT\n53'Trailer P\nTUL5 TULSA,Oklahoma 74116\nSun,Aug 18,04:29 CDT\nDrop\n$877,98\n$1.56/mi\nS.Karimov",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n1117VWVW1\nStarts in\nSpot\n13h 47m\nSAT4 SAN ANTONIO,Texas 78245\n563 mi\nSat,Aug 17.16:45 CDT\n12h 15m\nT\n53'Trailer P\nTUL5 TULSA,Oklahoma 74116\nSun,Aug 18,04:29 CDT\nDrop\n$877,98\n$1.56/mi\nS.Karimov\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"1117VWVW1\", \"pic",
+    "extractor_raw": "{\"load_number\": \"1117VWVW1\", \"pickup location\": \"Spot\", \"pickup time\": \"13h 47m\", \"drop_off location\": \"TUL5 TULSA,Oklahoma 74116\", \"drop_ off time\": \"Sun, Aug 18,04:29 CDT\", \"total rate\": \"$877,98\", \"rate per mile\": \"$1.56/mi\"}",
+    "vision_raw": "{\n  \"load_number\": \"1117VWVW1\",\n  \"pickup_location\": \"Spot\",\n  \"pickup_time\": \"Sat, Aug 17, 16:45 CDT\",\n  \"dropoff_location\": \"TUL5 TULSA, Oklahoma 74116\",\n  \"dropoff_time\": \"Sun, Aug 18, 04:29 CDT\",\n  \"total_rate\": \"$877,98\",\n  \"rate_per_mile\": \"$1.56/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "1117VWVW1",
+      "pickup_location": "Spot",
+      "pickup_time": "13h 47m",
+      "dropoff_location": "TUL5 TULSA,Oklahoma 74116",
+      "dropoff_time": "Sun, Aug 18,04:29 CDT",
+      "total_rate": "$877,98",
+      "rate_per_mile": "$1.56/mi"
+    },
+    "vision_fields": {
+      "load_number": "1117VWVW1",
+      "pickup_location": "Spot",
+      "pickup_time": "Sat, Aug 17, 16:45 CDT",
+      "dropoff_location": "TUL5 TULSA, Oklahoma 74116",
+      "dropoff_time": "Sun, Aug 18, 04:29 CDT",
+      "total_rate": "$877,98",
+      "rate_per_mile": "$1.56/mi"
+    },
+    "chosen_fields": {
+      "load_number": "1117VWVW1",
+      "pickup_location": "Spot",
+      "pickup_time": "Sat, Aug 17, 16:45 CDT",
+      "dropoff_location": "TUL5 TULSA, Oklahoma 74116",
+      "dropoff_time": "Sun, Aug 18, 04:29 CDT",
+      "total_rate": "$877,98",
+      "rate_per_mile": "$1.56/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a12.jpg",
+    "ocr_time": 0.5,
+    "extractor_time": 11.76,
+    "vision_time": 4.06,
+    "total_llm_time": 15.82,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "115L1W2PY\nStarts in\n19h 57m\nHIN9 WHITELAND,Indiana 46184\n498mi\nSat,Aug 17,21:00 EDT\n11h 2m\nT\n53'Trailer \nHMC9 Liberty,Missouri 64068\nDrop\nSun,Aug 18,06:31 CDT\nFri,16 Aug 21:00 Eastern D..\n$1654,35\n$3.32/mi\nA.Marynchyk,M.Mamatkhonov",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n115L1W2PY\nStarts in\n19h 57m\nHIN9 WHITELAND,Indiana 46184\n498mi\nSat,Aug 17,21:00 EDT\n11h 2m\nT\n53'Trailer \nHMC9 Liberty,Missouri 64068\nDrop\nSun,Aug 18,06:31 CDT\nFri,16 Aug 21:00 Eastern D..\n$1654,35\n$3.32/mi\nA.Marynchyk,M.Mamatkhonov\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"115L1W2PY\", \"pic",
+    "extractor_raw": "{\"load_number\": \"115L1W2PY\", \"pickup_location\": \"HIN9 WHITELAND,Indiana 46184\", \"pickup_time\": \"19h 57m\", \"drop_off_location\": \"HMC9 Liberty,Missouri 64068\", \"drop_off_time\": \"06:31 CDT\", \"total_rate\": \"$1654.35\", \" rate_per_ mile\": \"$3.32/mi\"}",
+    "vision_raw": "{\n  \"load_number\": \"115L1W2PY\",\n  \"pickup_location\": \"HIN9 WHITELAND, Indiana 46184\",\n  \"pickup_time\": \"19h 57m\",\n  \"dropoff_location\": \"HMC9 Liberty, Missouri 64068\",\n  \"dropoff_time\": \"06:31 CDT\",\n  \"total_rate\": \"$1,654.35\",\n  \"rate_per_mile\": \"$3.32/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "115L1W2PY",
+      "pickup_location": "HIN9 WHITELAND,Indiana 46184",
+      "pickup_time": "19h 57m",
+      "dropoff_location": "HMC9 Liberty,Missouri 64068",
+      "dropoff_time": "06:31 CDT",
+      "total_rate": "$1654.35",
+      "rate_per_mile": "$3.32/mi"
+    },
+    "vision_fields": {
+      "load_number": "115L1W2PY",
+      "pickup_location": "HIN9 WHITELAND, Indiana 46184",
+      "pickup_time": "19h 57m",
+      "dropoff_location": "HMC9 Liberty, Missouri 64068",
+      "dropoff_time": "06:31 CDT",
+      "total_rate": "$1,654.35",
+      "rate_per_mile": "$3.32/mi"
+    },
+    "chosen_fields": {
+      "load_number": "115L1W2PY",
+      "pickup_location": "HIN9 WHITELAND, Indiana 46184",
+      "pickup_time": "19h 57m",
+      "dropoff_location": "HMC9 Liberty, Missouri 64068",
+      "dropoff_time": "06:31 CDT",
+      "total_rate": "$1,654.35",
+      "rate_per_mile": "$3.32/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a13.jpg",
+    "ocr_time": 0.47,
+    "extractor_time": 11.31,
+    "vision_time": 3.42,
+    "total_llm_time": 14.73,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "1148TFTZM\nStarts in\n1d 0h\nIND1WHITESTOWN,IN 46075\n167mi\nSun, Aug 18, 01:00 EDT\n4h 57m\nT\n53' Trailer \nMDW5 CREST HILL,ILLINOIS60403\nDrop\nSun,Aug 18,04:26 CDT\nSat, 17 Aug 01:00 Eastern ...\n$951,37\n$5.69/mi\nd.orifov\nA",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n1148TFTZM\nStarts in\n1d 0h\nIND1WHITESTOWN,IN 46075\n167mi\nSun, Aug 18, 01:00 EDT\n4h 57m\nT\n53' Trailer \nMDW5 CREST HILL,ILLINOIS60403\nDrop\nSun,Aug 18,04:26 CDT\nSat, 17 Aug 01:00 Eastern ...\n$951,37\n$5.69/mi\nd.orifov\nA\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"\", \"pickup_locat",
+    "extractor_raw": "{'Load Number': '1148TFTZM', 'Pickup Location': 'IND1WHITESTOWN,IN 46075', 'Pickup Time': '01:00 EDT', 'Drop-off Location': 'MDW5 CREST HILL,ILLINOIS60403', 'Drop-off Time': '04:26 CDT', 'Total Rate': '$951,37', 'Rate Per Mile': '$5.69/mi'}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"1148TFTZM\",\n  \"pickup_location\": \"WHITESTOWN, IN 46075\",\n  \"pickup_time\": \"Sun, Aug 18 01:00 EDT\",\n  \"dropoff_location\": \"CREST HILL, ILLINOIS 60403\",\n  \"dropoff_time\": \"Sun, Aug 18 04:26 EDT\",\n  \"total_rate\": \"$951.37\",\n  \"rate_per_mile\": \"$5.69\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "",
+      "pickup_location": "",
+      "pickup_time": "",
+      "dropoff_location": "",
+      "dropoff_time": "",
+      "total_rate": "",
+      "rate_per_mile": ""
+    },
+    "vision_fields": {
+      "load_number": "1148TFTZM",
+      "pickup_location": "WHITESTOWN, IN 46075",
+      "pickup_time": "Sun, Aug 18 01:00 EDT",
+      "dropoff_location": "CREST HILL, ILLINOIS 60403",
+      "dropoff_time": "Sun, Aug 18 04:26 EDT",
+      "total_rate": "$951.37",
+      "rate_per_mile": "$5.69"
+    },
+    "chosen_fields": {
+      "load_number": "1148TFTZM",
+      "pickup_location": "WHITESTOWN, IN 46075",
+      "pickup_time": "Sun, Aug 18 01:00 EDT",
+      "dropoff_location": "CREST HILL, ILLINOIS 60403",
+      "dropoff_time": "Sun, Aug 18 04:26 EDT",
+      "total_rate": "$951.37",
+      "rate_per_mile": "$5.69"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a14.jpg",
+    "ocr_time": 0.46,
+    "extractor_time": 13.9,
+    "vision_time": 4.0,
+    "total_llm_time": 17.9,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "T-111JTB6FK\nStarts in\nSpot\n6h 18m\nFWA4 FORT WAYNE,Indiana 46809\n748mi\nSat, Aug 17, 06:22 EDT\n1d 13h\n53'TrailerP\nSAV3 Macon,Georgia 31216\nSunAug 18,18:24 EDT\nDrop\n$1319,67\n$1.76/mi\nD.Dzhuraev\nv",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\nT-111JTB6FK\nStarts in\nSpot\n6h 18m\nFWA4 FORT WAYNE,Indiana 46809\n748mi\nSat, Aug 17, 06:22 EDT\n1d 13h\n53'TrailerP\nSAV3 Macon,Georgia 31216\nSunAug 18,18:24 EDT\nDrop\n$1319,67\n$1.76/mi\nD.Dzhuraev\nv\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"T-111JTB6FK\", \"p",
+    "extractor_raw": "{\n\"Load Number\": \"T-111JTB6FK\",\n\"Pickup Location\": \"FWA4 FORT WAYNE,Indiana 46809\",\n\"Pickup Time\": \"Sat, Aug 17, 06:22 EDT\",\n\"Drop-off Location\": \"SAV3 Macon,Georgia 31216\",\n\"Drop-off Time\": \" SunAug 18,18:24 EDT\",\n\"Total Rate\": \" $1319,67\",\n\"Rate Per Mile\": \" $1.76/mi\"\n}",
+    "vision_raw": "{\n  \"load_number\": \"T-111JTB6FK\",\n  \"pickup_location\": \"FWA4 Fort Wayne, Indiana 46809\",\n  \"pickup_time\": \"Sat, Aug 17, 06:22 EDT\",\n  \"dropoff_location\": \"SAV3 Macon, Georgia 31216\",\n  \"dropoff_time\": \"Sun, Aug 18, 18:24 EDT\",\n  \"total_rate\": \"$1319.67\",\n  \"rate_per_mile\": \"$1.76/mi\"\n}",
+    "extractor_fields": {
+      "load_number": "T-111JTB6FK",
+      "pickup_location": "FWA4 FORT WAYNE,Indiana 46809",
+      "pickup_time": "Sat, Aug 17, 06:22 EDT",
+      "dropoff_location": "SAV3 Macon,Georgia 31216",
+      "dropoff_time": "SunAug 18,18:24 EDT",
+      "total_rate": "$1319,67",
+      "rate_per_mile": "$1.76/mi"
+    },
+    "vision_fields": {
+      "load_number": "T-111JTB6FK",
+      "pickup_location": "FWA4 Fort Wayne, Indiana 46809",
+      "pickup_time": "Sat, Aug 17, 06:22 EDT",
+      "dropoff_location": "SAV3 Macon, Georgia 31216",
+      "dropoff_time": "Sun, Aug 18, 18:24 EDT",
+      "total_rate": "$1319.67",
+      "rate_per_mile": "$1.76/mi"
+    },
+    "chosen_fields": {
+      "load_number": "T-111JTB6FK",
+      "pickup_location": "FWA4 Fort Wayne, Indiana 46809",
+      "pickup_time": "Sat, Aug 17, 06:22 EDT",
+      "dropoff_location": "SAV3 Macon, Georgia 31216",
+      "dropoff_time": "Sun, Aug 18, 18:24 EDT",
+      "total_rate": "$1319.67",
+      "rate_per_mile": "$1.76/mi"
+    },
+    "chosen_from": "vision"
+  },
+  {
+    "source_image": "a15.jpg",
+    "ocr_time": 0.44,
+    "extractor_time": 12.77,
+    "vision_time": 2.32,
+    "total_llm_time": 15.09,
+    "llm_models": "mistral-7b + mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "ocr_text": "115ZVR5ML\nStarts in\n9h 30m\nIND2PLAINFIELD,IN 46168\n193mi\nSat,Aug 17,11:30 EDT\n5h 57m\n53'Trailer \nMDW5CREST HILL,ILLINOIS60403\nDrop\nSat,Aug 17,15:56 CDT\nFri,16 Aug 11:30 Eastern D..\n$1022,07\n$5.29/mi\nS.Gapparov",
+    "extractor_prompt": "You are a document parser. Extract the following fields from the text and return ONLY a valid JSON object.\nDo not explain anything. Do not add commentary. Do not include extra instructions.\n\n- Load Number\n- Pickup Location\n- Pickup Time\n- Drop-off Location\n- Drop-off Time\n- Total Rate\n- Rate Per Mile\n\nText:\n115ZVR5ML\nStarts in\n9h 30m\nIND2PLAINFIELD,IN 46168\n193mi\nSat,Aug 17,11:30 EDT\n5h 57m\n53'Trailer \nMDW5CREST HILL,ILLINOIS60403\nDrop\nSat,Aug 17,15:56 CDT\nFri,16 Aug 11:30 Eastern D..\n$1022,07\n$5.29/mi\nS.Gapparov\n\nReturn only a JSON object:",
+    "vision_prompt_head": "Extract these fields from the RATE CONFIRMATION IMAGE.\nReturn ONLY valid JSON with EXACT keys and string values (no prose, no code fences). If a field is not visible, use \"\".\n\n{\n  \"load_number\": \"\",\n  \"pickup_location\": \"\",\n  \"pickup_time\": \"\",\n  \"dropoff_location\": \"\",\n  \"dropoff_time\": \"\",\n  \"total_rate\": \"\",\n  \"rate_per_mile\": \"\"\n}\n\nRules:\n- Copy values verbatim as seen on the document (do not reformat dates or currency).\n- Do NOT invent; if not visible, use \"\".\n- Candidate below is ONLY a hint; the IMAGE is source of truth.\n\nCandidate (from OCR extractor):\n{\"load_number\": \"115ZVR5ML\", \"pic",
+    "extractor_raw": "{\"load_number\": \"115ZVR5ML\", \"pickup_location\": \"IND2PLAINFIELD,IN 46168\", \"pickup_time\": \"Sat,Aug 17,11:30 EDT\", \"drop_off_location\": \"MDW5CREST Hill,ILLINOIS 60403\", \"drop_off_time\": \"Sat, Aug 17, 15:56 CDT\", \"total_rate\": \"$1022,07\", \"rate_per_mile\": \"$5,29\"}",
+    "vision_raw": "```json\n{\n  \"load_number\": \"115ZVR5ML\",\n  \"pickup_location\": \"IND2PLAINFIELD, IN 46168\",\n  \"pickup_time\": \"Sat, Aug 17, 11:30  EDT\",\n  \"dropoff_location\": \"MDW5 Crest Hill, ILLINOIS 60403\",\n  \"dropoff_time\": \"Sat, Aug 17, 15:56  CDT\",\n  \"total_rate\": \"$ 1 022.07\",\n  \"rate_per_mile\": \"$ 5.29\"\n}\n```",
+    "extractor_fields": {
+      "load_number": "115ZVR5ML",
+      "pickup_location": "IND2PLAINFIELD,IN 46168",
+      "pickup_time": "Sat,Aug 17,11:30 EDT",
+      "dropoff_location": "MDW5CREST Hill,ILLINOIS 60403",
+      "dropoff_time": "Sat, Aug 17, 15:56 CDT",
+      "total_rate": "$1022,07",
+      "rate_per_mile": "$5,29"
+    },
+    "vision_fields": {
+      "load_number": "115ZVR5ML",
+      "pickup_location": "IND2PLAINFIELD, IN 46168",
+      "pickup_time": "Sat, Aug 17, 11:30  EDT",
+      "dropoff_location": "MDW5 Crest Hill, ILLINOIS 60403",
+      "dropoff_time": "Sat, Aug 17, 15:56  CDT",
+      "total_rate": "$ 1 022.07",
+      "rate_per_mile": "$ 5.29"
+    },
+    "chosen_fields": {
+      "load_number": "115ZVR5ML",
+      "pickup_location": "IND2PLAINFIELD, IN 46168",
+      "pickup_time": "Sat, Aug 17, 11:30  EDT",
+      "dropoff_location": "MDW5 Crest Hill, ILLINOIS 60403",
+      "dropoff_time": "Sat, Aug 17, 15:56  CDT",
+      "total_rate": "$ 1 022.07",
+      "rate_per_mile": "$ 5.29"
+    },
+    "chosen_from": "vision"
+  }
+]

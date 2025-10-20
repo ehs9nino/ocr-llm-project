@@ -1,6 +1,6 @@
 You are a document parser. Extract the following fields from the text given commercial driver license (CDL) and return ONLY a valid JSON object. Do not explain anything. Do not add commentary. Do not include extra instructions.
 
-- Full Name
+- Full Name 
 - License Number
 - Expiration Date
 - State
@@ -10,4 +10,4 @@ You are a document parser. Extract the following fields from the text given comm
 Text:
 {TEXT}
 
-Return only a JSON object:
+Return only a JSON object: 
