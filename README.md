@@ -1,11 +1,8 @@
-# 🧠 OCR–LLM Document Processing System (PeerJ 2025 Code Release)
+# 🧠 OCR–LLM Document Processing System (DocEng 2026 Code Release)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17392715.svg)](https://doi.org/10.5281/zenodo.17392715)
 
-This repository contains the **implementation and evaluation pipeline** for  
-**“Traffic Document Processing with Large Language Models: A Benchmark for Information Extraction from Noisy OCR”**  
-(Qader *et al.*, 2025, *PeerJ Computer Science*).
 
 ---
 
@@ -160,11 +157,6 @@ The evaluation scripts reproduce all results reported in the paper.
 
 - **Code:** MIT License  
 - **Dataset:** CC-BY-4.0  
-- **Citation:**  
-  Qader, E., Efremenko, D., & Derkach, D. (2025).  
-  *Traffic Document Processing with Large Language Models: A Benchmark for Information Extraction from Noisy OCR.*  
-  *PeerJ Computer Science.*  
-  DOI: [10.5281/zenodo.17392715](https://doi.org/10.5281/zenodo.17392715)
 
 ---
 
